@@ -12,3 +12,16 @@ def get_chars_dict(text):
         else:
             chars[lowered] = 1
     return chars
+
+
+def sort_on(dict):
+    return dict["num"]
+
+
+def chars_dict_to_sorted_list(chars_dict):
+    sorted_list = []
+    for ch in chars_dict:
+        new_dict = {"char": ch, "num": chars_dict[ch]}
+        sorted_list.append(new_dict)
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
